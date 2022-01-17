@@ -246,6 +246,13 @@ filesets:
       - data/vivado_waive.tcl: { file_type: tclSource }
       - data/kc705.xdc: { file_type: xdc }
 
+  alveo_200:
+    files:
+      - rtl/corescore_alveo_200.v: { file_type: verilogSource }
+      - rtl/corescore_alveo_200.v: { file_type: verilogSource }
+      - data/vivado_waive.tcl: { file_type: tclSource }
+      - data/alveo_200.xdc: { file_type: xdc }
+
   zcu106:
     files:
       - rtl/corescore_zcu106_clock_gen.v: { file_type: verilogSource }
@@ -665,6 +672,15 @@ targets:
       vivado: { part: xc7k325tffg900-2 }
     toplevel: corescore_kc705
 
+  alveo_200:
+    default_tool: vivado
+    description: Xilinx Alveo 200 acceleration card with 960 cores + SERV emitter
+    filesets: [rtl, alveo_200]
+    generate: [corescorecore_alveo_200]
+    tools:
+      vivado: { part: xcu200fsgd2104-2 }
+    toplevel: corescore_alveo_200
+
   vcu118:
     default_tool: vivado
     filesets: [rtl, vcu118]
@@ -920,6 +936,11 @@ generate:
     generator: corescorecore
     parameters:
       count: 960
+
+  corescorecore_alveo_200:
+    generator: corescorecore
+    parameters:
+      count: 10
 
   corescorecore_vcu118:
     generator: corescorecore

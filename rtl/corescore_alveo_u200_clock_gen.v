@@ -1,5 +1,5 @@
 `default_nettype none
-module corescore_alveo_200_clock_gen
+module corescore_alveo_u200_clock_gen
   (input wire  i_clk,
    output wire o_clk,
    output reg  o_rst);

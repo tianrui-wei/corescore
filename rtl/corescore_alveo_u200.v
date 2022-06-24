@@ -1,5 +1,5 @@
 `default_nettype none
-module corescore_alveo_200
+module corescore_alveo_u200
 (
  input wire  i_clk_p,
  input wire  i_clk_n,
@@ -14,7 +14,7 @@ module corescore_alveo_200
       .IB (i_clk_n),
       .O  (i_clk));
 
-   corescore_alveo_200_clock_gen
+   corescore_alveo_u200_clock_gen
    clock_gen
      (.i_clk (i_clk),
       .o_clk (clk),
